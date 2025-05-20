@@ -4,14 +4,14 @@ import Button from '../Button/Button';
 import OptionSize from './OptionSize';
 import OptionColor from './OptionColor';
 
-const ProductForm = ({colors, sizes, currentColor, currentSize, setCurrentColor, setCurrentSize, title, getPrice}) => {
+const ProductForm = ({colors, sizes, currentColor, currentSize, setCurrentColor, setCurrentSize, title, price}) => {
 
     const handleSubmit = event => {
     event.preventDefault();
     
     console.log({
         title,
-        price: getPrice(),
+        price,
         color: currentColor,
         size:  currentSize
     });
@@ -49,7 +49,7 @@ const ProductForm = ({colors, sizes, currentColor, currentSize, setCurrentColor,
   setCurrentColor: PropTypes.func.isRequired,
   setCurrentSize: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
-  getPrice: PropTypes.func.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default ProductForm;
